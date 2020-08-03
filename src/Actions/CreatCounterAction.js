@@ -1,4 +1,4 @@
-export const INCREASE = 'CREATECOUNTER';
+export const CREATECOUNTER = 'CREATECOUNTER';
 export function createCounterAction() {
     return {
         type: CREATECOUNTER,

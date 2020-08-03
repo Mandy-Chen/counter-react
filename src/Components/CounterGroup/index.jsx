@@ -1,43 +1,7 @@
 import React from "react";
 import Counter from "../Counter";
 class CounterGroup extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      sum: 0,
-    };
-  }
-  inputCount = (event) => {
-    if (event.target.value == "") {
-      this.setState({
-        count: 0,
-        sum: 0,
-      });
-    } else {
-      this.setState({
-        count: 0,
-        sum: 0,
-      });
-      this.setState({
-        count: event.target.value,
-        sum: 0,
-      });
-    }
-  };
-
-  getSum = (number) => {
-    this.setState({
-      sum: this.state.sum + number,
-    });
-  };
-
-  setUpdateStatus = (status) => {
-    this.setState({
-      update: false,
-    });
-  };
-
+  // ?
   // render() {
   //   return (
   //     <div>
@@ -57,17 +21,17 @@ class CounterGroup extends React.Component {
   // export default CounterGroup;
 
   render() {
-    const { value, increase, reduce } = this.props;
+    const { value, inputCount } = this.props;
     return (
       <div>
         Count :
         <input value={value} onChange={inputCount} />
         {new Array(parseInt(value)).fill(0).map((value, index) => (
-          <CountApp
+          <Counter
             parent={this}
             key={index}
             getcount={value}
-          ></CountApp>
+          ></Counter>
         ))}
       </div>
       //   <button onClick={increase}>+</button>

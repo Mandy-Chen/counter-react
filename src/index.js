@@ -3,18 +3,14 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import changeCount from './Reducers/Reduce'
+import createCounter from './Reducers/createCounterReducer'
 import CountApp from "./Containers/CounterContainer";
-import CounterGroup from "./Components/CounterGroup";
+import AddCounter from "./Containers/CreateCounterContainer";
 const storeCount = createStore(changeCount);
-const storeCountGroup = createStore(CounterGroup);
+const storeCountGroup = createStore(createCounter);
 ReactDOM.render(
   <Provider store={storeCount}>
     <CountApp />
-    <CounterGroup />
-  </Provider>,
-  <Provider store={storeCountGroup}>
-    <CountApp />
-    <CounterGroup />
   </Provider>,
   document.getElementById('root')
 );

@@ -1,14 +1,15 @@
-import { connect } from  'react-redux'
-import CounterGroup from '../Components/CounterGroup'
-import { createCounterAction } from '../Actions/Action';
+import { connect } from 'react-redux'
+import  CounterGroup from '../Components/CounterGroup'
+import { createCounterAction } from '../Actions/CreatCounterAction';
 const mapStateToProps = (state) => ({
     value: state.value
 })
-const mapDispatchToProps=(dispatchEvent)=>({
-    increase:()=>dispatchEvent(createCounterAction())
+const mapDispatchToProps = (dispatchEvent) => ({
+    inputCount: () => dispatchEvent(createCounterAction())
 })
-const CounterGroup=connect(
+const AddCounter = connect(
     mapStateToProps,
     mapDispatchToProps
 )(CounterGroup)
-export default CounterGroup
+export default AddCounter
+
