@@ -1,18 +1,29 @@
 import React from "react";
-class GetCount extends React.Component() {
-    inputChange(){
-        this.setState({
-            count:this.name.count.value
-        })
-    }
-    getInputValue(){
-        console.log(this.state.count)
-    }
+import CounterGroup from "../CounterGroup";
+class GetCount extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 0,
+    };
+  }
+  inputCount = (e) => {
+    this.setState({
+      count: e.target.value,
+    });
+  };
+  getInputValue = () => {
+    alert(this.state.count);
+  };
+
   render() {
-    <div>
-      <input name="count" onChange={() => this.inputChange()} />
-      <button onClick={() => this.getInputValue()}>确定</button>
-    </div>;
+    return (
+      <div>
+        Count :<input value={this.state.count} onChange={this.inputCount} />
+        <button onClick={this.getInputValue}>确定</button>
+        <CounterGroup></CounterGroup>
+      </div>
+    );
   }
 }
 export default GetCount;
