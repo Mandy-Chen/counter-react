@@ -11,12 +11,14 @@ class Counter extends React.Component {
             number:this.state.number+1
         }
         )
+        this.props.getNumber.getSum(1)
     }
     reduce=()=> {
         this.setState({
             number:this.state.number-1
         }
         )
+        this.props.getNumber.getSum(-1)
     }
   render() {
     return (
