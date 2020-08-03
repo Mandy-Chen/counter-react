@@ -38,19 +38,42 @@ class CounterGroup extends React.Component {
     });
   };
 
+  // render() {
+  //   return (
+  //     <div>
+  //       Count :
+  //       <input value={this.state.count} onChange={this.inputCount.bind(this)} />
+  //       {new Array(parseInt(this.state.count)).fill(0).map((value, index) => (
+  //         <Counter parent={this} key={index} getcount={this.state.count}></Counter>
+  //       ))}
+  //       <div>
+  //         {this.state.sum}
+  //         {this.state.update}
+  //       </div>
+  //     </div>
+  //   );
+  // }
+  // }
+  // export default CounterGroup;
+
   render() {
+    const { value, increase, reduce } = this.props;
     return (
       <div>
         Count :
-        <input value={this.state.count} onChange={this.inputCount.bind(this)} />
-        {new Array(parseInt(this.state.count)).fill(0).map((value, index) => (
-          <Counter parent={this} key={index} getcount={this.state.count}></Counter>
+        <input value={value} onChange={inputCount} />
+        {new Array(parseInt(value)).fill(0).map((value, index) => (
+          <CountApp
+            parent={this}
+            key={index}
+            getcount={value}
+          ></CountApp>
         ))}
-        <div>
-          {this.state.sum}
-          {this.state.update}
-        </div>
       </div>
+      //   <button onClick={increase}>+</button>
+      //   <mark>{value}</mark>
+      //   <button onClick={reduce}>-</button>
+      // </div>
     );
   }
 }
