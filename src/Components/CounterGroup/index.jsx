@@ -5,36 +5,51 @@ class CounterGroup extends React.Component {
     super(props);
     this.state = {
       count: 0,
-       sum:0,
+      sum: 0,
     };
   }
   inputCount = (event) => {
     if (event.target.value == "") {
       this.setState({
         count: 0,
+        sum: 0,
       });
     } else {
       this.setState({
+        count: 0,
+        sum: 0,
+      });
+      this.setState({
         count: event.target.value,
+        sum: 0,
       });
     }
   };
 
   getSum = (number) => {
     this.setState({
-        sum: this.state.sum+number,
-      });
-    
+      sum: this.state.sum + number,
+    });
+  };
+
+  setUpdateStatus = (status) => {
+    this.setState({
+      update: false,
+    });
   };
 
   render() {
     return (
       <div>
-        Count :<input value={this.state.count} onChange={this.inputCount} />
-         {new Array(parseInt(this.state.count)).fill(0).map((value, index) => (
-          <Counter  getNumber={this} key={index} ></Counter>
+        Count :
+        <input value={this.state.count} onChange={this.inputCount.bind(this)} />
+        {new Array(parseInt(this.state.count)).fill(0).map((value, index) => (
+          <Counter parent={this} key={index} getcount={this.state.count}></Counter>
         ))}
-        <div>{this.state.sum}</div>
+        <div>
+          {this.state.sum}
+          {this.state.update}
+        </div>
       </div>
     );
   }

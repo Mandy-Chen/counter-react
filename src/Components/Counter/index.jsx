@@ -1,25 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 class Counter extends React.Component {
-    constructor(props){
-        super(props);
-        this.state={
-            number:0,
-        };
-    }
-     increase=()=> {
-        this.setState({
-            number:this.state.number+1
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: 0,
+      getcount:0
+    };
+  }
+
+  increase = () => {
+    this.setState({
+      number: this.state.number + 1,
+    });
+    this.props.parent.getSum(1);
+  };
+  reduce = () => {
+    this.setState({
+      number: this.state.number - 1,
+    });
+    this.props.parent.getSum(-1);
+  };
+
+  static getDerivedStateFromProps(props,state) {
+    if(props.getcount !== state.getcount) {
+        return {
+          number : 0,
+          getcount : props.getcount
         }
-        )
-        this.props.getNumber.getSum(1)
     }
-    reduce=()=> {
-        this.setState({
-            number:this.state.number-1
-        }
-        )
-        this.props.getNumber.getSum(-1)
-    }
+    return null;
+}
+
   render() {
     return (
       <div>
@@ -30,4 +41,4 @@ class Counter extends React.Component {
     );
   }
 }
-export default Counter
+export default Counter;
