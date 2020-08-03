@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux';
-import changeCount from './Reducer/Reduce'
+import changeCount from './Reducers/Reduce'
 import CountApp from "./Containers/CounterContainer";
 import CounterGroup from "./Components/CounterGroup";
 const storeCount = createStore(changeCount);
