@@ -1,4 +1,4 @@
-import { connect } from 'reac-redux'
+import { connect } from  'react-redux'
 import Counter from '../Components/Counter'
 import { increaseAction, reduceAction } from '../Actions/Action';
 const mapStateToProps = (state) => ({
@@ -6,7 +6,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps=(dispatchEvent)=>({
     increase:()=>dispatchEvent(increaseAction()),
-    reduce:()=>dispatchEvent(reduceAction)
+    reduce:()=>dispatchEvent(reduceAction())
 })
 const CountApp=connect(
     mapStateToProps,

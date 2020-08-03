@@ -8,7 +8,7 @@ export function increaseAction() {
 }
 export function reduceAction() {  
     return{
-        type:decodeURIComponent,
+        type:REDUCE,
         preload:"reduce 1"
     }
 }
