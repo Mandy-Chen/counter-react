@@ -2,7 +2,7 @@ import { connect } from  'react-redux'
 import Counter from '../Components/Counter'
 import { increaseAction, reduceAction } from '../Actions/Action';
 const mapStateToProps = (state) => ({
-    value: state.count
+    value: state.value
 })
 const mapDispatchToProps=(dispatchEvent)=>({
     increase:()=>dispatchEvent(increaseAction()),
