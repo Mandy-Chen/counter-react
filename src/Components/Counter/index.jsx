@@ -33,11 +33,11 @@ class Counter extends React.Component {
 // }
 
   render() {
-    const{value,increase,reduce}=this.props;
+    const{count,increase,reduce}=this.props;
     return (
       <div>
         <button onClick={increase}>+</button>
-        <mark>{value}</mark>
+        <mark>{count}</mark>
         <button onClick={reduce}>-</button>
       </div>
     );

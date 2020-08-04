@@ -7,7 +7,6 @@ import createCounter from './Reducers/createCounterReducer'
 import CountApp from "./Containers/CounterContainer";
 import AddCounter from "./Containers/CreateCounterContainer";
 const storeCount = createStore(changeCount);
-const storeCountGroup = createStore(createCounter);
 ReactDOM.render(
   <Provider store={storeCount}>
     <CountApp />
